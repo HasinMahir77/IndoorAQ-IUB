@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="aliceblue">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahir's IAQ Dashboard</title>
+    <!-- External CDN links removed -->
+    <link href="./index.css" rel="stylesheet" />
+    <!-- Chart.js CDN removed -->
+    <script src="./index.js" defer></script>
+    <!-- Ensure the script is loaded after the DOM -->
+  </head>
+  <body class="aliceblue">
+    <div class="top-bar d-flex flex-column align-items-center p-3">
+      <span>Mahir's Classroom Air Quality Monitoring</span>
+    </div>
+
+    <!-- Table Section -->
+    <div class="container p-5 mt-3 rounded shadow-sm page overflow-x-scroll">
+      <h2 class="text-center mb-4">Latest Data</h2>
+      <div id="loading" class="text-center my-3">Loading...</div>
+      <table
+        class="table table-bordered table-hover table-responsive rounded shadow-sm"
+      >
+        <thead class="table-dark">
+          <tr>
+            <th>Device ID</th>
+            <th>Position</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Pressure</th>
+            <th>PM1</th>
+            <th>PM2.5</th>
+            <th>PM10</th>
+            <th>CO2</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Rows will be populated dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="container p-5 mt-3 rounded shadow-sm page chart-section">
+      <h2 id="chart-title" class="text-center mb-3">Device Charts</h2>
+      <div id="chart-placeholder" class="chart-placeholder">
+        Click on a device to view charts
+      </div>
+      <div id="chart-container" class="row" style="display: none">
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <h5 class="card-title text-center">Temperature</h5>
+              <canvas id="tempChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <h5 class="card-title text-center">Humidity</h5>
+              <canvas id="humiChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <h5 class="card-title text-center">Pressure</h5>
+              <canvas id="pressureChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <h5 class="card-title text-center">PM1</h5>
+              <canvas id="pm1Chart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <h5 class="card-title text-center">PM2.5</h5>
+              <canvas id="pm25Chart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <h5 class="card-title text-center">PM10</h5>
+              <canvas id="pm10Chart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm rounded">
+            <div class="card-body">
+              <h5 class="card-title text-center">CO2</h5>
+              <canvas id="co2Chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
